@@ -1,5 +1,62 @@
-.brd{
-    /* border-color:conic-gradient("##FFE62E","#00FF19","#F67600","#FF00D6"); */
-    border-color: blue;
-    
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap");
+
+.brd {
+  border-width: 2px;
+  border-radius: 16px;
+  text-align: center;
+  padding: 12px;
+  /* border-color: radial-gradient("##FFE62E", "#00FF19", "#F67600", "#FF00D6"); */
+  /* border-color: #d036ff; */
+}
+
+.cardbrd {
+  background: linear-gradient(
+    91.98deg,
+    #d036ff 15.29%,
+    #ff44e1 54.57%,
+    #ff932f 100%
+  );
+}
+
+/* *  Tailwind css for card div h-3/6 w-3/6 bg-cardback backdrop-blur-[200px] p-2 flex flex-col space-y-1 rounded-3xl */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 50%;
+  padding: 8px;
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+  border-radius: 24px;
+  background: rgba(134, 134, 134, 0.4);
+  backdrop-filter: blur(200px);
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: transform 230ms ease-in-out;
+}
+.checkoutbtn {
+  width: 70%;
+  justify-items: center;
+  letter-spacing: 3px;
+  font-family: "Jura";
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 63px;
+  border-radius: 12px;
+  font-size: 30px;
+  height: 48px;
+  color: white;
+  font-weight: 400;
+  background: linear-gradient(
+    91.98deg,
+    #d036ff 15.29%,
+    #ff44e1 54.57%,
+    #ff932f 100%
+  );
+}
+
+.checkoutbtn:hover{
+    color: black;
 }

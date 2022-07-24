@@ -9,7 +9,8 @@ module.exports = {
       'cyan' : '#00F0FF',
       'banner': '#462AED',
       'navcolor': '#011411',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'cardback':"#616161"
     },
     extend: {},
   },
