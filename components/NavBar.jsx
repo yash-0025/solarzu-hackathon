@@ -2,10 +2,10 @@ import Image from "next/image"
 import Link from "next/link"
 import styles from "../styles/Home.module.css"
 import { useContext } from "react";
-import { sequence } from '0xsequence'
+// import { sequence } from '0xsequence'
 import { solarzuContext } from "../components/layout";
 const NavBar = (props) => {
-  const {connectWallet, connected } = useContext(solarzuContext);
+  const {connectWallet, connected ,disconnect} = useContext(solarzuContext);
   
   return (
     <nav className="flex  justify-between items-center  bg-navcolor w-full">
@@ -42,10 +42,10 @@ const NavBar = (props) => {
             :
               <div>
                 {
-                  connected ?
+                  !connected ?
                   <button onClick = {connectWallet}>Connect</button>
                   :
-                  <button>Connected</button>
+                  <button onClick={disconnect}>Connected</button>
                 }
               </div>
           }

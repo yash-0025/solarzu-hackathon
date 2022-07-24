@@ -4,11 +4,13 @@ import {solarzuContext} from '../components/layout';
 import HDWalletProvider from "@truffle/hdwallet-provider";
 import { OpenSeaPort, Network, OpenSeaSDK } from 'opensea-js'
 
-export default function BNPL(){
-    const {changeHome} = useContext(solarzuContext);
+export default function Checkout(){
+    const {changeHome,home} = useContext(solarzuContext);
     useEffect(() => {
-        changeHome()
-    },[]);
+        if(home){
+            changeHome();
+        }
+    },[home]);
 
     const PRIVATE_KEY = process.env.NEXT_PUBLIC_PRIVATE_KEY;
     const accountAddress= process.env.NEXT_PUBLIC_OWNER_ADDRESS;
