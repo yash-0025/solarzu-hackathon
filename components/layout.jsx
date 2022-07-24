@@ -1,6 +1,5 @@
-import React from "react";
-import Navbar from "./Navbar";
-import { useState,useContext,createContext } from "react";
+import Navbar from "./NavBar";
+import { useState,createContext } from "react";
 export const solarzuContext = createContext();
 export default function Layout({children}){
     const [home,setHome] = useState(true);
