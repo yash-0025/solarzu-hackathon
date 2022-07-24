@@ -1,15 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import styles from "../styles/Home.module.css"
-
+import { useContext } from "react";
+import { sequence } from '0xsequence'
+import { solarzuContext } from "../components/layout";
 const NavBar = (props) => {
-
-  const connectWallet = async () => {
-    const wallet = sequence.initWallet('polygon')
-    const connectDetails = await wallet.conconsole.log('=> connected?', connectDetails.connected)nect();
-    console.log('=> connected?', connectDetails.connected);
-  }
-
+  const {connectWallet, connected } = useContext(solarzuContext);
+  
   return (
     <nav className="flex  justify-between items-center  bg-navcolor w-full">
       <div className="brd">
@@ -39,13 +36,18 @@ const NavBar = (props) => {
           <li className="rounded-2xl brd border-2 tet-center p-3 `${styles.brd}` ">
           {
             props.home ?
-              <Link href="/" >
+              <Link href="/checkout" >
                 <a >Checkout</a>
               </Link>
             :
-              <Link href="/" onClick = {connectWallet}>
-                <a>Connect</a>
-              </Link>
+              <div>
+                {
+                  connected ?
+                  <button onClick = {connectWallet}>Connect</button>
+                  :
+                  <button>Connected</button>
+                }
+              </div>
           }
           </li>
         </ul>
