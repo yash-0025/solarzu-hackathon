@@ -2,15 +2,16 @@ import Image from "next/image"
 import Link from "next/link"
 import styles from "../styles/Home.module.css"
 
+
+
 const NavBar = (props) => {
   // const connectWallet = async () => {
   //   const wallet = sequence.initWallet('polygon')
-  //   const connectDetails = await wallet.conconsole.log('=> connected?', connectDetails.connected)connect();
+  //   const connectDetails = await wallet.conconsole.log('=> connected?', connectDetails.connected)nect():
   //   console.log('=> connected?', connectDetails.connected);
   // }
-
   return (
-    <nav className="flex  justify-between items-center  bg-navcolor w-full  ">
+    <nav className="flex  justify-between items-center  bg-navcolor w-full relative ">
       <div className="mx-1 p-2 my-1">
         <Link href="/">
           <Image
@@ -35,19 +36,19 @@ const NavBar = (props) => {
               <a>Documentaion</a>
             </Link>
           </li>
-          {props.home ? (
-              <li className={styles.brd}>
+          {props.home ? 
+            <li className={styles.brd}>
               <Link href="/checkout">
-              <a>Checkout</a>
+                <a>Checkout</a>
               </Link>
-              </li>
-              ) : (
-              <li className="rounded-2xl border-2 text-center p-3 brd">
-              <Link href="/" onClick={connectWallet}>
+            </li>
+            : 
+            <li className={styles.brd}>
+           <Link href="/" >
                 <a>Connect</a>
               </Link>
               </li>
-            )}
+          }
         </ul>
       </div>
     </nav>
