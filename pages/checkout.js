@@ -2,10 +2,21 @@ import React from 'react';
 import { useContext ,useEffect } from 'react';
 import {solarzuContext} from '../components/layout';
 import HDWalletProvider from "@truffle/hdwallet-provider";
-import { OpenSeaPort, Network, OpenSeaSDK } from 'opensea-js'
+import { OpenSeaPort, Network, OpenSeaSDK } from 'opensea-js';
+import { BigNumber } from 'ethers';
+const CoinGecko = require('coingecko-api');
 
 export default function Checkout(){
-    const {changeHome,home} = useContext(solarzuContext);
+    const {changeHome,home,contract} = useContext(solarzuContext);
+    
+    const ethToMatic = async() => {
+        const CoinGeckoClient = new CoinGecko();
+        const matic = await CoinGeckoClient.simple.price({
+            ids: ['matic-network'],
+            vs_currencies: ['eth'],
+        });
+        
+    };
     useEffect(() => {
         if(home){
             changeHome();
@@ -56,10 +67,30 @@ export default function Checkout(){
         })
         alert("Created Buy Order Successful");
     };
+    const divideInstalments = async (total_amount, instalments) => {
+        try{
+            const CoinGeckoClient = new CoinGecko();
+            const matic = await CoinGeckoClient.simple.price({
+                ids: ['matic-network'],
+                vs_currencies: ['eth'],
+            });
+            const amount = Math.ceil((total_amount)/ matic.data["matic-network"].eth);
+            const instalment_amount = Math.round(amount*(10**18) / instalments);
+            await contract.divide_installments(amount, instalments, BigNumber.from(""+instalment_amount));
+            console.log("done");
+            
+        }
+        catch(err){
+            alert(err.reason)
+        }
+    }
+
+        
+
     return (
         <div className='flex flex-col items-center mt-10'>
             <input type="text" id="tokenURL" placeholder="Enter url"></input>
-            <button className='mt-5' onClick={getDetails}>Get details</button>
+            <button className='mt-5' onClick={()=>{divideInstalments(1,3)}}>Get details</button>
         </div>
     )
 }

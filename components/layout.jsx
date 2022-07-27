@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./NavBar";
 import { useState,useContext,createContext } from "react";
 import { Contract , ethers} from "ethers";
@@ -15,20 +15,19 @@ export default function Layout({children}){
         /* See Provider Options Section */
     };
       
-    const web3Modal = new Web3Modal({
-        network: "mumbai", // optional
-        cacheProvider: true, // optional
-        providerOptions // required
-    });
     const connectWallet = async () => {
+        const web3Modal = new Web3Modal({
+            network: "mumbai", // optional
+            cacheProvider: true, // optional
+            providerOptions // required
+        });
         const instance = await web3Modal.connect();
 
         const provider = new ethers.providers.Web3Provider(instance);
         const signer = provider.getSigner();
         setProvider(signer);
         setConnected(true);
-        setContract(new Contract(solarzuAddress,abi,signer));
-        console.log(contract,signer);
+        
     }
     const disconnect = () => {
         setConnected(false);
@@ -36,6 +35,12 @@ export default function Layout({children}){
     const changeHome = () =>{
         setHome(!home);
     }
+
+    useEffect(() => {
+        if(connected){
+            setContract(new Contract(solarzuAddress,abi,provider));
+        }
+    },[connected]);
 
     return(
         <solarzuContext.Provider value={{
