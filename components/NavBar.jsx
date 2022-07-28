@@ -27,7 +27,7 @@ const NavBar = (props) => {
       <div className="w-6/12 mx-3 relative ">
         <ul className="flex flex-row justify-between items-center text-white text-2xl mr-3 p-1 ">
           <li className={styles.brd}>
-            <Link href="/checkout">
+            <Link href="/">
               <a className="align-center">Home</a>
             </Link>
           </li>

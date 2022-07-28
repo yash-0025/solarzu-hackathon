@@ -10,7 +10,8 @@ module.exports = {
       'banner': '#462AED',
       'navcolor': '#011411',
       'white': '#ffffff',
-      'cardback':"#616161"
+      'cardback': "#616161",
+      'caution':"#ECB400"
     },
     extend: {},
   },

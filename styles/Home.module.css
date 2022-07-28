@@ -113,7 +113,7 @@
 }
 
 .mainOvCard {
-  height: 700px;
+  height: 650px;
   width: 450px;
   background: #050f0f;
   margin: auto;
@@ -141,3 +141,32 @@
   height: 190px;
   border-radius: 20px;
 }
+/* .nft_TC_details {
+  background: rgba(217, 217, 217, 0.1);
+  justify-self: center;
+  position: relative;
+  padding: 15px;
+  margin: 20px 0 0 20px;
+  width: 410px;
+  height: 130px;
+  border-radius: 20px;
+} */
+
+.buybtn {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 60px;
+  width: 400px;
+  background: linear-gradient(90deg, #FD993C 4.69%, #5AA6FF 54.17%, #FF34AE 100%);
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.buybtn:hover{
+
+  text-decoration:underline;
+}
+
