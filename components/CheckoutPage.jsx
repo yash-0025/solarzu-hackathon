@@ -76,7 +76,7 @@ const CheckoutPage = () => {
                   <h1 className="text-white font-bold underline tracking-wider font-">
                     NFT Details
                   </h1>
-                  <div className="mt-4 space-y-2">
+                  <div className="mt-3 space-y-2">
                     <p className="text-white ">Name :{}</p>
                     <p className="text-white">Price :{}</p>
                     <p className="text-white">Interest :{}</p>
@@ -89,7 +89,7 @@ const CheckoutPage = () => {
                   <h1 className="text-white font-bold underline tracking-wider font-">
                     Transactions Details
                   </h1>
-                  <div className="mt-4 space-y-2 flex flex-col">
+                  <div className="mt-3 space-y-2 flex flex-col">
                     <div className="flex justify-between">
                       <p className="text-white ">Original Price :</p>
                       <p className="text-white ">100.00 ${}</p>
@@ -109,20 +109,30 @@ const CheckoutPage = () => {
                   </div>
                 </div>
               </div>
+              <div className={styles.nft_inCard}>
+                <div className="text-left ">
+                  <div className="flex justify-between">
+                  <p className="text-white  ">Installments : </p>
+                  <p className="text-white  ">3 months</p>
+                  </div>
+                  <div className="flex justify-between">
+                  <p className="text-white ">Amount : </p>
+                  <p className="text-white ">{} 1234.00$ /month</p>
+                  </div>
+                </div>
+              </div>
               <button className={styles.buybtn} onClick={toggleModal}>
-             BNPL
-            </button>
+                BNPL
+              </button>
               {/* Terms and condition section */}
-             {/*  <div className={styles.nft_TC_details}>
+              {/*  <div className={styles.nft_TC_details}>
                 <div className="flex flex-row">
                 <FiAlertTriangle className="text-[100px] text-caution mr-1"/>
                  <p className="text-white p-1">If you accepted this it means you are agreed with the tems and conditions mentioned and you know the result of not paying the BNPL amount on time .</p>
                 </div>
               </div> */}
             </div>
-            
           </div>
-          
         </div>
       )}
     </div>

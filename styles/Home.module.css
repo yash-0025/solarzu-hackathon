@@ -113,11 +113,11 @@
 }
 
 .mainOvCard {
-  height: 650px;
+  height: 730px;
   width: 450px;
   background: #050f0f;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 110px;
   border-radius: 20px;
 }
 
@@ -170,3 +170,13 @@
   text-decoration:underline;
 }
 
+.nft_inCard{
+  background: rgba(217, 217, 217, 0.1);
+  justify-self: center;
+  position: relative;
+  padding: 15px;
+  margin: 20px 0 0 20px;
+  width: 410px;
+  /* height: 70px; */
+  border-radius: 20px;
+}
