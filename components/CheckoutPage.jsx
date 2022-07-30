@@ -5,6 +5,7 @@ import Image from "next/image"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 import { FiAlertTriangle } from "react-icons/fi"
 import { Modal } from "web3modal"
+import {MdMessage} from "react-icons/md"
 
 const CheckoutPage = () => {
   const [modal, setModal] = useState(false)
@@ -77,9 +78,9 @@ const CheckoutPage = () => {
                     NFT Details
                   </h1>
                   <div className="mt-3 space-y-2">
-                    <p className="text-white ">Name :{}</p>
-                    <p className="text-white">Price :{}</p>
-                    <p className="text-white">Interest :{}</p>
+                    <p className="text-white ">Name :{} </p>
+                    <p className="text-white">Price :{} </p>
+                    <p className="text-white">Interest :{} </p>
                   </div>
                 </div>
               </div>
@@ -118,6 +119,17 @@ const CheckoutPage = () => {
                   <div className="flex justify-between">
                   <p className="text-white ">Amount : </p>
                   <p className="text-white ">{} 1234.00$ /month</p>
+                  </div>
+                </div>
+              </div>
+              {/* avail section */}
+              <div className={styles.nft_inCard}>
+                <div className="">
+                  <div className="flex justify-around ">
+                    <div className="items-center p-[10px]" >
+                    <MdMessage className="text-caution text-2xl"/>
+                    </div>
+                  <p className="text-white text-center ">To avail  <b>BNPL</b> you have to pay <b>10 %</b> of the <b> total amount </b> . </p>
                   </div>
                 </div>
               </div>
